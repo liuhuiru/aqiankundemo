@@ -1,4 +1,4 @@
-# vue3app
+# sub-vue3
 
 ## Project setup
 ```

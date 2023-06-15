@@ -1,1 +1,0 @@
-<template>独立vue3</template>
