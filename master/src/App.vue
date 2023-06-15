@@ -1,6 +1,5 @@
 <template>
-  111
-  <router-link to="/vue3app/">vue3app</router-link>
+  <router-view></router-view>
   <div id="appContainer"></div>
 </template>
 

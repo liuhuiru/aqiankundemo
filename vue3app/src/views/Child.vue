@@ -1,0 +1,1 @@
+<template>子应用vue3</template>
