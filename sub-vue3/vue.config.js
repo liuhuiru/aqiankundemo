@@ -2,7 +2,7 @@ const { defineConfig } = require("@vue/cli-service");
 const { name } = require('../package.json')
 
 module.exports = defineConfig({
-  // publicPath: '/subapp/sub-vue3',
+  // publicPath: '/app/sub-vue3',
   transpileDependencies: true,
   lintOnSave: false,
   // 配置devServer

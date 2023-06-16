@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { routes } from "@/router";
 import {createRouter, createWebHistory}from 'vue-router'
-import { registerMicroApps, start, setDefaultMountApp } from "qiankun";
+import { registerMicroApps, start } from "qiankun";
 
 const router = createRouter({
   //history路由
