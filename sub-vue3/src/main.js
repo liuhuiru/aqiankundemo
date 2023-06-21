@@ -12,7 +12,7 @@ let history = null;
 // createApp(App).use(router).mount('#app')
 function render(props = {}) {
     const { container } = props;
-    history = createWebHistory(window.__POWERED_BY_QIANKUN__ ? "/sub-vue3" : "/");
+    history = createWebHistory(window.__POWERED_BY_QIANKUN__ ? "/app/sub-vue3" : "/");
     router = createRouter({
         history,
         routes,
@@ -32,23 +32,9 @@ export async function bootstrap() {
     console.log('%c%s', 'color: green;', 'vue3.0 app bootstraped');
 }
 
-function storeTest(props) {
-    props.onGlobalStateChange &&
-        props.onGlobalStateChange(
-            (value, prev) => console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev),
-            true,
-        );
-    props.setGlobalState &&
-        props.setGlobalState({
-            ignore: props.name,
-            user: {
-                name: props.name,
-            },
-        });
-}
 
 export async function mount(props) {
-    storeTest(props);
+    // storeTest(props);
     render(props);
     instance.config.globalProperties.$onGlobalStateChange = props.onGlobalStateChange;
     instance.config.globalProperties.$setGlobalState = props.setGlobalState;

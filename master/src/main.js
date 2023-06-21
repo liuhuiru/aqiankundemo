@@ -1,26 +1,53 @@
 import { createApp } from "vue";
-import App from "./App.vue";
 import { router } from "@/router";
-import { registerMicroApps, start } from "qiankun";
+import { registerMicroApps, start, setDefaultMountApp } from "qiankun";
+import { createPinia } from 'pinia';
+import { useStore } from "@/store";
+import App from "./App.vue";
+import registerAppConfig from "./micro-app.js";
+// import 'nprogress/nprogress.css'
 
 
-
+const pinia = createPinia()
 const app = createApp(App);
+
 app.use(router);
+app.use(pinia);
 app.mount("#app");
 
+//loader加载进度
+const store = useStore();
+function loader(loading) {
+  if(store){
+    store.isLoading = loading
+  }
+}
 
-registerMicroApps([
-  {
-    name: "sub-vue3", // app name registered
-    entry: process.env.VUE_APP_SUB_VUE,
-    //子应用容器
-    //若为主应用，main.js会获取<router-view/>中的资源
-    //若为子应用，main.js忽略<router-view/>中的资源，获取id为container中的资源
-    container: "#appContainer",
-    // activeRule: "/app/sub-vue3",
-    activeRule: "/sub-vue3"
+const apps = registerAppConfig.map((item) => {
+  return {
+    ...item,
+    loader,
+  };
+});
+
+registerMicroApps(apps, {
+  beforeLoad: (app) => {
+    console.log("before load app.name====>>>>>", app.name, app);
   },
-]);
-// setDefaultMountApp('/sub-vue3')
+  beforeMount: [
+    (app) => {
+      console.log("[LifeCycle] before mount %c%s", "color: green;", app.name);
+    },
+  ],
+  afterMount: [
+    (app) => {
+      console.log("[LifeCycle] after mount %c%s", "color: green;", app.name);
+    },
+  ],
+  afterUnmount: [
+    (app) => {
+      console.log("[LifeCycle] after unmount %c%s", "color: green;", app.name);
+    },
+  ],
+});
 start();

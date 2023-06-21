@@ -1,17 +1,19 @@
 <template>
+  <p>当前处于{{ isQiankun ? "qiankun" : "独立运行" }}环境</p>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <!-- <p>当前处于{{isQiankun ? 'qiankun' : '独立运行'}}环境</p> -->
-  <router-view/>
+  <router-view />
 </template>
 
 <script setup>
+import { reactive, computed, ref } from "vue";
 
+const isQiankun = computed(() => window.__POWERED_BY_QIANKUN__);
 </script>
 
-<style>
+<!-- <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,4 +34,4 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-</style>
+</style> -->
