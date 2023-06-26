@@ -2,6 +2,7 @@ import './public-path';
 import { createApp } from "vue";
 import App from "./App.vue";
 import routes from "./router";
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
@@ -21,6 +22,9 @@ function render(props = {}) {
     instance = createApp(App);
     instance.use(router);
     // instance.use(store);
+    for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+        instance.component(key, component)
+      }
     instance.mount(container ? container.querySelector("#app") : "#app");
 }
 

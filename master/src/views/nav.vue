@@ -6,7 +6,6 @@
           :default-active="activeIndex"
           mode="horizontal"
           :ellipsis="false"
-          @select="handleSelect"
           router
         >
           <div class="logo">
@@ -23,17 +22,13 @@
           <div class="user-info">
             你好{{ store.userInfo.name }}
             <div style="padding: 8px">
-              <el-dropdown>
+              <el-dropdown @command="handleCommand">
                 <el-avatar
                   src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
                 />
                 <template #dropdown>
                   <el-dropdown-menu>
-                    <el-dropdown-item>Action 1</el-dropdown-item>
-                    <el-dropdown-item>Action 2</el-dropdown-item>
-                    <el-dropdown-item>Action 3</el-dropdown-item>
-                    <el-dropdown-item disabled>Action 4</el-dropdown-item>
-                    <el-dropdown-item divided>Action 5</el-dropdown-item>
+                    <el-dropdown-item command="logout">退出登录</el-dropdown-item>
                   </el-dropdown-menu>
                 </template>
               </el-dropdown>
@@ -58,9 +53,14 @@ import { useStore } from "@/store";
 const router = useRouter();
 const store = useStore();
 const activeIndex = ref("/app/sub-vue3");
-const handleSelect = (key, keyPath) => {
-  console.log(key, keyPath);
-};
+
+function handleCommand(command){
+  localStorage.clear();
+  // console.log('command', command)
+  router.push('/login')
+  ElMessage('已退出登录')
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -68,10 +68,9 @@ const handleSelect = (key, keyPath) => {
   ::v-deep .el-header {
     padding: 0;
   }
-  ::v-deep .el-menu {
+  .layout-header ::v-deep .el-menu {
     height: 58px;
   }
-
   .logo {
     font-weight: bold;
     display: flex;
@@ -90,6 +89,9 @@ const handleSelect = (key, keyPath) => {
   .flex-grow {
     flex-grow: 1;
     outline: none;
+  }
+  .main-container {
+    height: calc(100vh - 60px)
   }
 }
 </style>

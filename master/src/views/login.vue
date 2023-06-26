@@ -120,6 +120,10 @@ const submitForm = () => {
         console.log(store.userInfo);
         buttonLoading.value = false;
         router.push('/app/sub-vue3/')
+        ElMessage({
+          type: "success",
+          message: "登录成功！"
+        })
       }
     }
   });
