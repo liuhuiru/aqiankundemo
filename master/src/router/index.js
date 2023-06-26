@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
-// import NProgress from 'nprogress';
 
 const routes = [
-  // {
-  //   path: "/",
-  //   // redirect: "/app/sub-vue3/",
-  // },
+  {
+    path: "/",
+    redirect: "/app/sub-vue3/",
+  },
   {
     path: "/",
     component: () => import("@/views/nav.vue"),
@@ -34,19 +33,13 @@ export const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log('routechange', to.path, from.path)
+  // console.log('routechange', to.path, from.path)
   if(to.path === '/login'){
-    // NProgress.start();
     next()
   }else if (!localStorage.getItem('token')) {
     next('/login')
   }else {
-    // NProgress.start();
     next()
   }
 })
 
-// router.afterEach((to, from, failure) => {
-//   if(to.path === '/login')
-//   NProgress.done();
-// })
