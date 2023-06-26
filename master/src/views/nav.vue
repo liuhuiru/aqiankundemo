@@ -38,8 +38,7 @@
       </el-header>
 
       <el-main class="main-container">
-        <div id="appContainer"></div>
-        <!-- <router-view/> -->
+        <router-view/>
       </el-main>
     </el-container>
   </div>

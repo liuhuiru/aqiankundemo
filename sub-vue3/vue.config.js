@@ -5,7 +5,7 @@ const Components = require("unplugin-vue-components/webpack");
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
 
 module.exports = defineConfig({
-  // publicPath: '/app/sub-vue3',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/app/sub-vue3',
   transpileDependencies: true,
   lintOnSave: false,
   // 配置devServer

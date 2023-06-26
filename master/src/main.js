@@ -35,4 +35,5 @@ registerMicroApps(registerAppConfig, {
     },
   ],
 });
+debugger
 start();
