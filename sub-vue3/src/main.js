@@ -10,7 +10,6 @@ let router = null;
 let instance = null;
 let history = null;
 
-// createApp(App).use(router).mount('#app')
 function render(props = {}) {
     const { container } = props;
     history = createWebHistory(window.__POWERED_BY_QIANKUN__ ? "/app/sub-vue3" : "/");

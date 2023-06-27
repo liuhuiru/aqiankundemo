@@ -5,27 +5,27 @@ const routes = [
   },
   {
     path: "/",
-    component: () => import("../views/index.vue"),
+    component: () => import("@/layouts/index.vue"),
     children: [
       {
-        path: "/home",
+        path: "home",
         name: 'home',
-        component: () => import("../views/home.vue"),
+        component: () => import("@/views/home.vue"),
       },
       {
-        path: "/form",
+        path: "/element/form",
         name: 'form',
-        component: () => import("../views/form.vue"),
+        component: () => import("@/views/form.vue"),
       },
       {
-        path: "/table",
+        path: "/element/table",
         name: 'table',
-        component: () => import("../views/table.vue"),
+        component: () => import("@/views/table.vue"),
       },
       {
         path: "/tablev2",
         name: 'tablev2',
-        component: () => import("../views/tablev2.vue"),
+        component: () => import("@/views/tablev2.vue"),
       },
     ],
   },

@@ -33,7 +33,6 @@
   float: left
 }
 .index-right {
-  padding: 10px;
   margin-left: 200px
 }
 </style>

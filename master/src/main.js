@@ -3,12 +3,16 @@ import { router } from "@/router";
 import { registerMicroApps, start, setDefaultMountApp } from "qiankun";
 import { createPinia } from 'pinia';
 import App from "./App.vue";
-import registerAppConfig from "./micro-app.js";
-// import 'nprogress/nprogress.css'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import registerAppConfig from "@/common/config/registerAppConfig.js";
 
 
 const pinia = createPinia()
 const app = createApp(App);
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 
 app.use(router);
 app.use(pinia);
@@ -35,5 +39,3 @@ registerMicroApps(registerAppConfig, {
     },
   ],
 });
-debugger
-start();

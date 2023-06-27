@@ -4,26 +4,23 @@ const routes = [
   {
     path: "/",
     redirect: "/app/sub-vue3/",
+    
   },
   {
     path: "/",
-    component: () => import("@/views/nav.vue"),
+    component: () => import("@/layouts/index.vue"),
     children: [
       {
         path: "/app/:pathMatch(.*)",
         name: "app",
-        component: () => import("@/views/index.vue"),
+        component: () => import("@/views/app/index.vue"),
       },
     ],
   },
   {
     path: "/login",
-    component: () => import("@/views/login.vue"),
-  },
-  {
-    path: "/about",
-    component: () => import("@/views/login.vue"),
-  },
+    component: () => import("@/views/user/login.vue"),
+  }
 ];
 
 export const router = createRouter({

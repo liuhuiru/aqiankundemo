@@ -136,13 +136,13 @@ const submitForm = () => {
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  background: url("../../public/images/login/bg.png");
+  background: url("@/assets/images/login/bg.png");
   background-size: 100% 100%;
   .left-login {
     width: 50vw;
     height: 82vh;
     max-height: 1081px;
-    background: url("../../public/images/login/bg_nav.png");
+    background: url("@/assets/images/login/bg_nav.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin-top: 40px;
@@ -152,7 +152,7 @@ const submitForm = () => {
     width: 426px;
     height: 100vh;
     max-height: 1081px;
-    background: url("../../public/images/login/bg_right.png");
+    background: url("@/assets/images/login/bg_right.png");
     background-size: 100% 100%;
   }
   .smbot {
