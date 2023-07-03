@@ -20,8 +20,8 @@ import AppHeader from './components/app-header/index.vue';
   position: relative;
   .layout-body {
     background-color: var(--el-menu-hover-bg-color);
-    height: calc(100vh - 88px);
-    padding: 15px
+    height: calc(100vh - 78px);
+    padding: 10px;
   }
 }
 </style>

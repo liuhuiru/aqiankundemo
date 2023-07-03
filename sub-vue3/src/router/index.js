@@ -15,17 +15,17 @@ const routes = [
       {
         path: "/element/form",
         name: 'form',
-        component: () => import("@/views/form.vue"),
+        component: () => import("@/views/element/form.vue"),
       },
       {
         path: "/element/table",
         name: 'table',
-        component: () => import("@/views/table.vue"),
+        component: () => import("@/views/element/table.vue"),
       },
       {
         path: "/tablev2",
         name: 'tablev2',
-        component: () => import("@/views/tablev2.vue"),
+        component: () => import("@/views/element/tablev2.vue"),
       },
     ],
   },

@@ -15,14 +15,14 @@ import AppAside from "./components/app-aside/index.vue";
 <style lang="scss" scoped>
 .view {
   display: flex;
+  background-color: #fff;
+  border-radius: 15px;
   .view-aside {
-    /* width: 200px */
-    height:100%
+    height: calc(100vh - 88px);
+    overflow: auto;
   }
   .view-body {
     margin-left:10px;
-    height: 100%;
-    width: 100%;
   }
 
 }

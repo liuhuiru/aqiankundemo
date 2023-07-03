@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <img alt="logo" src="@/assets/logo.png" />
+      <img alt="logo" src="@/assets/images/logo.png" />
       <span class="logo-name">QIANKUNDEMO</span>
     </div>
     <div class="header-menu">
@@ -20,7 +20,7 @@
         <el-dropdown @command="handleCommand">
           <img
             alt="avatar"
-            src="@/assets/avatar15.png"
+            src="@/assets/images/avatar15.png"
             class="avatar"
           />
           <template #dropdown>

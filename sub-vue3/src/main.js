@@ -1,9 +1,11 @@
 import './public-path';
+import '@/assets/styles/index.scss'
 import { createApp } from "vue";
 import App from "./App.vue";
 import routes from "./router";
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createRouter, createWebHistory } from 'vue-router'
+
 
 
 let router = null;
