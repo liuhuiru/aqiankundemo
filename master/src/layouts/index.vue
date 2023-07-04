@@ -19,9 +19,9 @@ import AppHeader from './components/app-header/index.vue';
   flex-direction: column;
   position: relative;
   .layout-body {
-    background-color: var(--el-menu-hover-bg-color);
-    height: calc(100vh - 78px);
-    padding: 10px;
+    /* background-color: #f7f8fc; */
+    height: calc(100vh - 58px);
+    /* padding: 15px; */
   }
 }
 </style>

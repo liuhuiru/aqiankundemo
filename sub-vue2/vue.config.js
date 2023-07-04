@@ -2,7 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 const { name } = require('../package.json')
 
 module.exports = defineConfig({
-  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/app/sub-vue2',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/app/sub-vue2/',
   transpileDependencies: true,
   lintOnSave: false,
   // 配置devServer

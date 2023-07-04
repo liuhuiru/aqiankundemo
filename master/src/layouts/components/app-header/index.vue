@@ -40,15 +40,21 @@ import { ref, computed } from "vue";
 import { useStore } from "@/store";
 import headerMenuConfig from "@/common/config/headerMenuConfig"
 
-const router = useRouter();
+const router = useRouter()
+const route = useRoute()
 const store = useStore();
-const activeIndex = ref("/app/sub-vue3");
+const activeIndex = ref("");
 
 function handleCommand(command) {
   localStorage.clear();
   router.push("/login");
   ElMessage("已退出登录");
 }
+
+const path = route.path.split("/")
+activeIndex.value = path[2]==='sub-vue3'? '/app/sub-vue3' : '/app/sub-vue2'
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -58,7 +64,7 @@ function handleCommand(command) {
   height: 58px;
   align-items: center;
   position: relative;
-  border-radius: 50px;
+  border-bottom: solid 2px #ecececb3;
   .header-left {
     display: flex;
     align-items: center;
